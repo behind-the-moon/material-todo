@@ -1,20 +1,18 @@
-<div class="card-panel">
+<div class="card-panel totals-panel">
   <div class="row">
   <div class="col s4">{{pluralize-word totalLeft 'item'}} left</div>
   <div class="col s8">
-    <div class="right">
     {{#link-to 'todo' (query-params filter="all")
-      class=(if (eq filter 'all') 'btn disabled' 'btn')
+      class=(if (eq filter 'all') 'active' '')
       }}All{{/link-to}}
       {{#link-to 'todo' (query-params filter="active")
-        class=(if (eq filter 'active') 'btn disabled' 'btn')
+        class=(if (eq filter 'active') 'active' '')
         }}
         Active{{/link-to}}
       {{#link-to 'todo' (query-params filter="complete") 
-        class=(if (eq filter 'complete') 'btn disabled' 'btn ')
+        class=(if (eq filter 'complete') 'active' '')
         }}
       Complete{{/link-to}}
-    </div>
   </div>
   </div>
 </div>

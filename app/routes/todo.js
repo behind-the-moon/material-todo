@@ -10,14 +10,20 @@ export default Ember.Route.extend({
   model: function(params) {
     let filter = params.filter || 'all';
     let store = this.get('store');
+    let todos;
 
     switch(filter) {
       case('active'):
-        return store.query('todo', {complete: false});
+        todos = store.query('todo', {complete: false});
+        break;
       case('complete'):
-        return store.query('todo', {complete: true});
+        todos = store.query('todo', {complete: true});
+        break;
       default:
-        return store.findAll('todo');
+        todos = store.findAll('todo');
+        break;
     }
+
+    return Ember.RSVP.hash({ todos: todos, model : store.findAll('todo')});
   }
 });

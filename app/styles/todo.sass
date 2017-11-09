@@ -1,13 +1,29 @@
 body
   background: #fff
 
+@media screen and (max-width: 480px)
+  .container
+    width: 98%
+
+.collection.card-panel
+  padding: 0
+  border: none
+
 .collection .collection-item
   .row
     margin-bottom: 0
+  p.content
+    padding: 0 0.4em
+    display: inline-block
+    width: 100%
+    white-space: nowrap
+    overflow: hidden !important
+    text-overflow: ellipsis
   p
     font-size: 1.5em
     &.complete
       text-decoration: line-through
+      color: #aaa
 
 .collection .collection-item .todo-control
   cursor: pointer
@@ -21,3 +37,13 @@ body
   width: 24px
   height: 24px
   padding: 2px
+
+.totals-panel
+  a
+    margin: 0 0.3em
+    padding: 0.2em 0.3em
+    font-size: 1.1em
+    border-radius: 2px
+    &.active
+      border: 1px solid #aaa
+      color: #aaa

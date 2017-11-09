@@ -1,6 +1,9 @@
-{{add-todo items=todos}}
+{{add-todo items=model.model}}
 
-<ul class="collection">
+<ul class="collection with-header card-panel">
+  <li class="collection-header">TODO 
+    <span class="badge purple lighten-4">material</span>
+    <span class="badge green lighten-2">ember</span></li>
   {{#each todos as |item|}}
     <li class="collection-item">
       {{todo-item item=item}}
@@ -8,4 +11,4 @@
   {{/each}}
 </ul>
 
-{{todo-totals items=todos filter=filter}}
+{{todo-totals items=model.model filter=filter}}

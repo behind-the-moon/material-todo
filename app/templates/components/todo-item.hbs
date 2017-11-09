@@ -1,22 +1,22 @@
 <div class="row">
-<div class="todo-control col s1">
+<div class="todo-control col m1 s2">
   {{input type="checkbox" id=(concat 'chk-' item.id) checked=item.complete change=(action "toggleComplete")}}
   <label for="{{concat 'chk-' item.id}}"></label>
 </div>
    {{#if isEditable}}
-    <div class="col s10">
+    <div class="col s8 m10">
      {{input id=(concat 'edit-' item.id) value=item.text autofocus="true"
      focus-out=(action 'hideEditor')
      enter=(action 'saveTodo')}}
     </div>
    {{else}}
-     <div class="col s10" {{action 'showEditor'}}>
-     <p class="{{if item.complete 'complete'}}">
+     <div class="col s8 m10" {{action 'showEditor'}}>
+     <p class="content {{if item.complete 'complete'}}">
       {{item.text}}
     </p>
     </div>
    {{/if}}
-   <div class="col s1">
+   <div class="col s2 m1">
      <p class="todo-control" {{action 'removeTodo'}}>
        <i class="small material-icons red-text">delete</i>
      </p>
