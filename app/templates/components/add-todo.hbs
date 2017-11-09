@@ -1,0 +1,24 @@
+{{#if isInputDisplayed}}
+  <div class="card-panel">
+
+  <form class="col s12" {{action 'createTodo' on="submit"}}>
+    <div class="row">
+      <div class="input-field">
+        <i class="material-icons prefix">edit_mode</i>
+        {{input id="new-todo-text" className="validate red" type="text" 
+        autofocus="true" required="true" focus-out=(action 'hideInput')
+        value=newTodoText}}
+        <label for="new-todo-text">Create todo</label>
+      </div>
+    </div>
+  </form>
+
+  </div>
+{{else}}
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large green accent-4" {{action 'showInput'}}>
+      <i class="large material-icons">add</i>
+    </a>
+  </div>
+{{/if}}
+

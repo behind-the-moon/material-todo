@@ -1,0 +1,23 @@
+body
+  background: #fff
+
+.collection .collection-item
+  .row
+    margin-bottom: 0
+  p
+    font-size: 1.5em
+    &.complete
+      text-decoration: line-through
+
+.collection .collection-item .todo-control
+  cursor: pointer
+  label
+    height: auto
+
+.collection .collection-item .todo-control > label,
+.collection .collection-item .todo-control > label:before,
+.collection .collection-item .todo-control > label:after
+  margin-top: 12px
+  width: 24px
+  height: 24px
+  padding: 2px

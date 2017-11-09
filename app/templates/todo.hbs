@@ -1,0 +1,11 @@
+{{add-todo items=todos}}
+
+<ul class="collection">
+  {{#each todos as |item|}}
+    <li class="collection-item">
+      {{todo-item item=item}}
+    </li>
+  {{/each}}
+</ul>
+
+{{todo-totals items=todos filter=filter}}
